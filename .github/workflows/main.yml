@@ -1,13 +1,19 @@
-name: Portfolio Deployment
+name: Simple Pipeline
 
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Commands
+        run: |
+          echo "this is from terminal"
+          echo "hello praful"
